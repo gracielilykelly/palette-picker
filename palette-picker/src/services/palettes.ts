@@ -1,15 +1,24 @@
 import Vibrant from "node-vibrant";
 
-export const buildPaletteFromImage = function (imageSrc: string): object[] {
-    const colors: object[] = [];
-    Vibrant.from(imageSrc).getPalette()
-    .then((palette: any) => {
-        Object.entries(palette).forEach(([key]) => {
-            const colorName = key;
-            const hexValue = palette[key].getHex();
-            colors.push({colorName, hexValue})
-        })
-        
-    })
-    return colors;
+export interface Color {
+  colorName: string;
+  hexValue: string;
 }
+
+export const buildPaletteFromImage = async (imageSrc: string): Promise<Color[]> => {
+  const colors: Color[] = [];
+  const palette = await Vibrant.from(imageSrc).getPalette();
+
+  if (palette) {
+    Object.entries(palette).forEach(([key, color]) => {
+      if (color) {
+        colors.push({
+          colorName: key,
+          hexValue: color.getHex(),
+        });
+      }
+    });
+  }
+
+  return colors;
+};

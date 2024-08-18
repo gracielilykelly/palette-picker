@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
+import { Color } from '../services/palettes';
 
 interface ColorPaletteProps {
-  colors: any[];
+  colors: Color[];
 }
 
 const ColorPalette: React.FC<ColorPaletteProps> = ({ colors }) => {
+    console.log(colors);
     const [copiedColor, setCopiedColor] = useState<string | null>(null);
     const handleColorClick = async (hexValue: string) => {
       await navigator.clipboard.writeText(hexValue);
