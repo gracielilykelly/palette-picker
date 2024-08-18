@@ -21,7 +21,8 @@ const App: React.FC = () => {
 
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
-      <h1>Color Palette Extractor</h1>
+      <h1>Palette Picker</h1>
+      <h3>Create beautiful palettes from an image</h3>
       <ImageUpload onImageUpload={handleImageUpload} />
       {imageSrc && (
         <div>
