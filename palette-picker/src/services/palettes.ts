@@ -11,7 +11,8 @@ export const buildPaletteFromImage = async (imageSrc: string): Promise<Color[]> 
 
   if (palette) {
     Object.entries(palette).forEach(([key, color]) => {
-      if (color) {
+      // get first five colors
+      if (color && colors.length < 5) {
         colors.push({
           colorName: key,
           hexValue: color.getHex(),

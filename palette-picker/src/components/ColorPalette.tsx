@@ -1,50 +1,29 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Color } from '../services/palettes';
+import ColorBox from './ColorBox';
 
 interface ColorPaletteProps {
   colors: Color[];
+  imageSrc: string | undefined;
 }
 
-const ColorPalette: React.FC<ColorPaletteProps> = ({ colors }) => {
-    console.log(colors);
-    const [copiedColor, setCopiedColor] = useState<string | null>(null);
-    const handleColorClick = async (hexValue: string) => {
-      await navigator.clipboard.writeText(hexValue);
-      setCopiedColor(hexValue);
-      setTimeout(() => setCopiedColor(null), 1000); // Clear after 1 seconds
-  };
+const ColorPalette: React.FC<ColorPaletteProps> = ({ colors, imageSrc }) => {
 
-  return (  
-    <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6'>
-      {colors.map((color, index) => (
-        <div
-          key={index}
-          className='flex flex-col items-center justify-center bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 cursor-pointer'
-          style={{
-            backgroundColor: color.hexValue,
-            width: '50px',
-            height: '50px',
-            cursor: 'pointer',
-          }}
-          onClick={() => handleColorClick(color.hexValue)}
-        >
-          {copiedColor === color.hexValue && (
-            <span
-              style={{
-                position: 'absolute',
-                color: '#fff',
-                backgroundColor: 'rgba(0, 0, 0, 0.6)',
-                padding: '5px',
-                borderRadius: '3px',
-                fontSize: '12px',
-              }}
-            >
-              Copied!
-            </span>
-          )}
+  return (
+    <section className="w-full max-w-sm mb-6 mt-12">
+      <div className="mb-6">
+        <img src={imageSrc} alt="Uploaded Image" className="w-full rounded shadow-md" />
+      </div>
+
+      <div className='flex justify-center gap-0'>
+        {colors.map((color, index) => (
+          <div key={index}>
+          <ColorBox hexValue={color.hexValue} />
+            
           </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
