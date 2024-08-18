@@ -20,13 +20,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
-      <h1>Palette Picker</h1>
+    <div className="flex flex-col items-center p-4">
+      <h1 className="text-2xl font-bold mb-6">Palette Picker</h1>
       <h3>Create beautiful palettes from an image</h3>
       <ImageUpload onImageUpload={handleImageUpload} />
       {imageSrc && (
-        <div>
-          <img src={imageSrc} alt="Uploaded" style={{ maxWidth: '100%', marginTop: '20px' }} />
+        <div className="w-full max-w-sm mb-6">
+          <img src={imageSrc} alt="Uploaded" className="w-full rounded shadow-md" />
         </div>
       )}
       {colors.length > 0 && <ColorPalette colors={colors} />}

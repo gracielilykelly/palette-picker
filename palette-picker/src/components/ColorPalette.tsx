@@ -13,20 +13,16 @@ const ColorPalette: React.FC<ColorPaletteProps> = ({ colors }) => {
   };
 
   return (  
-    <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
+    <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6'>
       {colors.map((color, index) => (
         <div
           key={index}
+          className='flex flex-col items-center justify-center bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 cursor-pointer'
           style={{
             backgroundColor: color.hexValue,
             width: '50px',
             height: '50px',
-            borderRadius: '5px',
             cursor: 'pointer',
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
           }}
           onClick={() => handleColorClick(color.hexValue)}
         >
