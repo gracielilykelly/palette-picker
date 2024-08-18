@@ -10,7 +10,7 @@ interface ColorPaletteProps {
 const ColorPalette: React.FC<ColorPaletteProps> = ({ colors, imageSrc }) => {
 
   return (
-    <section className="w-full max-w-sm mb-6 mt-12">
+    <section className="w-full max-w-sm mb-6">
       <div className="mb-6">
         <img src={imageSrc} alt="Uploaded Image" className="w-full rounded shadow-md" />
       </div>
