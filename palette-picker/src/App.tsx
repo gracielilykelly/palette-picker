@@ -30,9 +30,9 @@ const App: React.FC = () => {
   return (
     <section className='flex flex-col min-h-screen'>
       <div className="flex flex-col items-center p-4 mt-12">
-        <header>
+        <header className="text-center">
           <h1 className="text-2xl font-bold mb-2 dark:text-blue-300">Palette Picker</h1>
-          <h3 className="text-xl mb-6 dark:text-gray-400">Create beautiful palettes from an image</h3>
+          <h2 className="mb-6 dark:text-gray-400">Create beautiful palettes from an image</h2>
         </header>
         <main className="flex-grow">
           <ImageUpload onImageUpload={handleImageUpload} />

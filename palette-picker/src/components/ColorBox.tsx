@@ -1,4 +1,4 @@
-import { faCheck, faCheckCircle, faCopy } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faCopy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 
@@ -10,7 +10,6 @@ const ColorBox: React.FC<ColorPaletteProps> = ({ hexValue }) => {
     const [copiedColor, setCopiedColor] = useState<string | null>(null);
 
     const handleColorClick = async () => {
-        console.log("HANDLING HERE")
         await navigator.clipboard.writeText(hexValue);
         setCopiedColor(hexValue);
         setTimeout(() => setCopiedColor(null), 1000); // Clear after 1 seconds
