@@ -46,7 +46,7 @@ const App: React.FC = () => {
       <footer className="bg-gray-800 text-white p-4 text-center mt-auto">
         <div className="w-full mx-auto max-w-screen-xl p-4">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-            <a href="https://github.com/gracielilykelly" className="hover:text-blue-300" target="_blank"><FontAwesomeIcon icon={faAt}/>gracielilykelly</a>
+            <a href="https://github.com/gracielilykelly" className="hover:text-blue-300" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faAt}/>gracielilykelly</a>
           </span>
         </div>
       </footer>
