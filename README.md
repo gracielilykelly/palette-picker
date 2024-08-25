@@ -1,6 +1,6 @@
 # 🎨 Palette Picker
 <div align="center">
-  <img width="661" alt="Screenshot 2024-08-18 at 19 18 30" src="https://github.com/user-attachments/assets/be30767e-ffe7-451a-a6ad-1bb854be2a79">
+  <a href="https://palette-picker-app.vercel.app/" target="_blank"><img width="661" alt="Screenshot 2024-08-18 at 19 18 30" src="https://github.com/user-attachments/assets/be30767e-ffe7-451a-a6ad-1bb854be2a79"></a>
 </div>
 
 ## Description
@@ -21,5 +21,8 @@ in web design, branding, or other creative projects.
 - Tailwind CSS
 - Node-Vibrant
 
-## Demo
+## Deployed App
+App can be viewed [here](https://palette-picker-app.vercel.app/)
+
+## Video Demo
 https://github.com/user-attachments/assets/db635203-fd1b-441a-9286-62d763e1aef2
